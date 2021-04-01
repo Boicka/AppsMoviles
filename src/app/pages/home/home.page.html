@@ -1,10 +1,11 @@
 <app-header namepage="Revisión"></app-header>
 
 <ion-content>
- 
-    <ion-item>
+ <ion-list>
+    <ion-item routerLink="/truck-register" detail>
+        <ion-radio slot="start" value="registro de vehículo" checked></ion-radio>
         <ion-label>Registro de vehículo</ion-label>
-        <ion-radio value="registro de vehículo" checked></ion-radio>
+        
     </ion-item>
     <ion-item>
         <ion-label>Parte externa</ion-label>
@@ -14,7 +15,7 @@
         <ion-label>Parte interna</ion-label>
         <ion-radio value="parte interna"></ion-radio>
     </ion-item>
-
+</ion-list>
 </ion-content>
 
 <app-footer></app-footer>
