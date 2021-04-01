@@ -1,10 +1,11 @@
 <app-header namepage="Revisión Externa"></app-header>
 
-<ion-content fullscreen>
+<ion-content [fullscreen]="true">
+    <ion-grid>
     <ion-list>
         <ion-item>
             <ion-label>1-Camarote</ion-label>
-            <ion-select value="01">
+            <ion-select value="01" okText="Aceptar" cancelText="Cancelar">
              <ion-select-option value="01">Bien</ion-select-option>
              <ion-select-option value="02">Mal</ion-select-option>
             </ion-select>
@@ -65,14 +66,37 @@
               <ion-select-option value="02">Mal</ion-select-option>
             </ion-select>
         </ion-item>
+        <ion-item>
+            <ion-label>10-puertas remolque</ion-label>
+            <ion-select value="01">
+             <ion-select-option value="01">Bien</ion-select-option>
+             <ion-select-option value="02">Mal</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>11-Bisagras y mecanismos de apertura</ion-label>
+            <ion-select value="01">
+             <ion-select-option value="01">Bien</ion-select-option>
+             <ion-select-option value="02">Mal</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>12-Chasis del camion lado copiloto</ion-label>
+            <ion-select value="01">
+              <ion-select-option value="01">Bien</ion-select-option>
+              <ion-select-option value="02">Mal</ion-select-option>
+            </ion-select>
+        </ion-item>
    
            
 
-        <ion-button color="primary" size="small">
-            Siguiente
-        </ion-button>
     </ion-list>
+
+    <ion-button color="primary" size="small">
+        Siguiente
+    </ion-button>
+
+</ion-grid>
 </ion-content>
 
 
-<app-footer></app-footer>
