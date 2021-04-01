@@ -1,23 +1,16 @@
-<ion-content  color = "primary">
-  <ion-grid>
-    <ion-row>
-      <ion-col align-self-center>
-          <ion-img style="width: 300px; height: 300px;" src="assets/img/logo.png"></ion-img>
-        <ion-list>
-            <ion-item>
-               <ion-label position="floating">Login name</ion-label>
-               <ion-input value=""></ion-input>
-               <ion-icon slot="end" name="person-outline"></ion-icon>
-            </ion-item>
-           
-            <ion-item>
-               <ion-label  position="floating">Password</ion-label>
-               <ion-input value="" type="password" required></ion-input>
-               <ion-icon slot="end" name="lock-closed-outline"></ion-icon>
-             </ion-item>
-        </ion-list>
-        <ion-button expand="block" size="small" color="tertiary">Login</ion-button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+<ion-content color="primary">
+<ion-img style="width: 300px; height: 300px;" src="assets/img/logo.png"></ion-img>
+<ion-item color= "primary" shape="round">
+  <ion-label position="floating">Username</ion-label>
+   <ion-input  type="text"></ion-input>
+   <ion-icon slot="end" name="person-outline"></ion-icon>
+</ion-item>
+
+<ion-item color= "primary" shape="round">
+  <ion-label  position="floating">Password</ion-label>
+     <ion-input  type="password" required></ion-input>
+     <ion-icon slot="end" name="lock-closed-outline"></ion-icon>
+   </ion-item> 
+<p><ion-button shape="round" expand="block" fill="solid" size="large" 
+  color="tertiary">Login</ion-button></p>
 </ion-content>
