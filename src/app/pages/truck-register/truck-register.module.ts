@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { TruckRegisterPageRoutingModule } from './truck-register-routing.module';
 
 import { TruckRegisterPage } from './truck-register.page';
+import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TruckRegisterPageRoutingModule
+    TruckRegisterPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [TruckRegisterPage]
 })
