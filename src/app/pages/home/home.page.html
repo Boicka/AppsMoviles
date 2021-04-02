@@ -1,6 +1,6 @@
 <app-header namepage="Revisión"></app-header>
 
-<ion-content>
+<ion-content class="ion-padding">
     <ion-grid>
         <ion-row>
           <ion-col></ion-col>
@@ -11,7 +11,7 @@
     </ion-grid>
     
     <ion-list>
-        <ion-item  routerLink="/truck-register"  detail>
+        <ion-item  routerLink="/tabs/truck-register"  detail>
              <ion-label>Registro de vehículo</ion-label>
              <ion-radio slot="start" value="registro de vehículo"></ion-radio>
         </ion-item>
@@ -24,7 +24,7 @@
     </ion-grid>
 
     <ion-list>    
-        <ion-item routerLink="/outside-register" detail>
+        <ion-item routerLink="/tabs/outside-register" detail>
             <ion-radio slot="start" value="parte externa"></ion-radio>
             <ion-label>Parte externa</ion-label>
         </ion-item>
@@ -37,7 +37,7 @@
     </ion-grid>
         
     <ion-list> 
-        <ion-item routerLink="/inside-register" detail>       
+        <ion-item routerLink="/tabs/inside-register" detail>       
              <ion-radio slot="start" value="parte interna"></ion-radio>
              <ion-label>Parte interna</ion-label>
         </ion-item>
@@ -57,14 +57,14 @@
       </ion-row>
 
       <ion-row>
-        <ion-col size="3"></ion-col>
-        <ion-col size="6">
-            <ion-button routerLink="/home" shape="round" size="small" expand="full" color="warning">
-                Añadir registro</ion-button>
+        <ion-col size="4"></ion-col>
+        <ion-col size="4">
+            <ion-button routerLink="/tabs/home" shape="round" expand="full" color="warning">
+              Añadir registro
+            </ion-button>
         </ion-col>
-        <ion-col size="3"></ion-col>
+        <ion-col size="4"></ion-col>
     </ion-row>
   </ion-grid>
 
 </ion-content>
-
