@@ -9,6 +9,8 @@ import { TruckRegisterPageRoutingModule } from './truck-register-routing.module'
 import { TruckRegisterPage } from './truck-register.page';
 import { ComponentsModule } from '../../components/components.module';
 
+import { SignPage } from '../sign/sign.page';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -17,6 +19,12 @@ import { ComponentsModule } from '../../components/components.module';
     TruckRegisterPageRoutingModule,
     ComponentsModule
   ],
-  declarations: [TruckRegisterPage]
+  declarations: [
+    TruckRegisterPage,
+    SignPage
+  ],
+  entryComponents:[
+    SignPage
+  ]
 })
 export class TruckRegisterPageModule {}

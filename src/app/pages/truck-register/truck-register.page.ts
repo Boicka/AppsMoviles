@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { SignPage } from '../sign/sign.page';
 
 @Component({
   selector: 'app-truck-register',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TruckRegisterPage implements OnInit {
 
-  constructor() { }
+  constructor(public modalController:ModalController) { }
 
   ngOnInit() {
+  }
+
+  async openModalSign(titleModal){
+    const modal = await this.modalController.create({
+      component: SignPage,
+      /* cssClass: 'my-custom-class' */
+      componentProps: {
+        'titulo': titleModal
+      }
+    });
+    return await modal.present();
   }
 
 }

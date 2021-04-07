@@ -3,22 +3,30 @@
 <ion-content [fullscreen]="true" class="ion-padding">
     <ion-grid>
         <ion-row>
+            <ion-col size="2"></ion-col>
+            <ion-col size="8" class="ion-text-center">
+                <ion-text>
+                    <h1>Exclusivo Seguridad</h1>
+                </ion-text>
+            </ion-col>
+            <ion-col size="2"></ion-col>
+        </ion-row>
+
+        <ion-row>
             <ion-col size="6">
                 <ion-item>
                     <ion-label position="floating">1-Camarote</ion-label>
-                    <ion-select okText="Aceptar" cancelText="Cancelar">
-                     <ion-select-option value="01">Bien</ion-select-option>
-                     <ion-select-option value="02">Mal</ion-select-option>
-                    </ion-select>
+                    <ion-input (click)="openModalState('1 Camarote', 1)">
+                        {{ status }}
+                    </ion-input>
                 </ion-item>
             </ion-col>
             <ion-col size="6">
                 <ion-item>
                     <ion-label position="floating">2-Motor</ion-label>
-                    <ion-select okText="Aceptar" cancelText="Cancelar">
-                     <ion-select-option value="01">Bien</ion-select-option>
-                     <ion-select-option value="02">Mal</ion-select-option>
-                    </ion-select>
+                    <ion-input (click)="openModalState('2 Motor', 2)">
+                        {{ status }}
+                    </ion-input>
                 </ion-item>
             </ion-col>
         </ion-row>
@@ -26,59 +34,53 @@
             <ion-col size="6">
                 <ion-item>
                     <ion-label position="floating">3-Defensa</ion-label>
-                    <ion-select okText="Aceptar" cancelText="Cancelar">
-                     <ion-select-option value="01">Bien</ion-select-option>
-                     <ion-select-option value="02">Mal</ion-select-option>
-                    </ion-select>
+                    <ion-input (click)="openModalState('3 Defensa', 3)">
+                        {{ status }}
+                    </ion-input>
                 </ion-item>
             </ion-col>
             <ion-col size="6">
                 <ion-item>
-                    <ion-label position="floating">4-Llantas(camion)</ion-label>
-                    <ion-select okText="Aceptar" cancelText="Cancelar">
-                     <ion-select-option value="01">Bien</ion-select-option>
-                     <ion-select-option value="02">Mal</ion-select-option>
-                    </ion-select> 
+                    <ion-label position="floating">4-Llantas(camión)</ion-label>
+                    <ion-input (click)="openModalState('4 Llantas(camión)', 4)">
+                        {{ status }}
+                    </ion-input>
                 </ion-item>
             </ion-col>
         </ion-row>
         <ion-row>
             <ion-col size="6">
                 <ion-item>
-                    <ion-label position="floating">5-tanque combustible</ion-label>
-                    <ion-select okText="Aceptar" cancelText="Cancelar">
-                     <ion-select-option value="01">Bien</ion-select-option>
-                     <ion-select-option value="02">Mal</ion-select-option>
-                    </ion-select>
+                    <ion-label position="floating">5-Tanque combustible</ion-label>
+                    <ion-input (click)="openModalState('5 Tanque combustible', 5)">
+                        {{ status }}
+                    </ion-input>
                 </ion-item>
             </ion-col>
             <ion-col size="6">
                 <ion-item>
                     <ion-label position="floating">6-Quinta rueda</ion-label>
-                    <ion-select okText="Aceptar" cancelText="Cancelar">
-                     <ion-select-option value="01">Bien</ion-select-option>
-                     <ion-select-option value="02">Mal</ion-select-option>
-                    </ion-select>
-                </ion-item> 
+                    <ion-input (click)="openModalState('6 Quinta rueda', 6)">
+                        {{ status }}
+                    </ion-input>
+                </ion-item>
             </ion-col>
         </ion-row>
         <ion-row>
             <ion-col size="6">
                 <ion-item>
                     <ion-label position="floating">7-Llantas remolque</ion-label>
-                    <ion-select okText="Aceptar" cancelText="Cancelar">
-                     <ion-select-option value="01">Bien</ion-select-option>
-                     <ion-select-option value="02">Mal</ion-select-option>
-                    </ion-select>
+                    <ion-input (click)="openModalState('7 Llantas remolque', 7)">
+                        {{ status }}
+                    </ion-input>
                 </ion-item>
             </ion-col>
             <ion-col size="6">
                 <ion-item>
                     <ion-label position="floating">8-Bolsas de aire</ion-label>
-                    <ion-select okText="Aceptar" cancelText="Cancelar">
-                     <ion-select-option value="01">Bien</ion-select-option>
-                     <ion-select-option value="02">Mal</ion-select-option>
-                    </ion-select>
+                    <ion-input (click)="openModalState('8 Bolsas de aire', 8)">
+                        {{ status }}
+                    </ion-input>
                 </ion-item>
             </ion-col>
         </ion-row>
@@ -86,19 +88,17 @@
             <ion-col size="6">
                 <ion-item>
                     <ion-label position="floating">9-Chasis del camion lado chofer</ion-label>
-                    <ion-select okText="Aceptar" cancelText="Cancelar">
-                      <ion-select-option value="01">Bien</ion-select-option>
-                      <ion-select-option value="02">Mal</ion-select-option>
-                    </ion-select>
+                    <ion-input (click)="openModalState('9 Chasis del camion lado chofer', 9)">
+                        {{ status }}
+                    </ion-input>
                 </ion-item>
             </ion-col>
             <ion-col size="6">
                 <ion-item>
-                    <ion-label position="floating">10-puertas remolque</ion-label>
-                    <ion-select okText="Aceptar" cancelText="Cancelar">
-                     <ion-select-option value="01">Bien</ion-select-option>
-                     <ion-select-option value="02">Mal</ion-select-option>
-                    </ion-select>
+                    <ion-label position="floating">10-Puertas remolque</ion-label>
+                    <ion-input (click)="openModalState('10-Puertas remolque', 10)">
+                        {{ status }}
+                    </ion-input>
                 </ion-item>
             </ion-col>
         </ion-row>
@@ -106,35 +106,28 @@
             <ion-col size="6">
                 <ion-item>
                     <ion-label position="floating">11-Bisagras y mecanismos de apertura</ion-label>
-                    <ion-select okText="Aceptar" cancelText="Cancelar">
-                     <ion-select-option value="01">Bien</ion-select-option>
-                     <ion-select-option value="02">Mal</ion-select-option>
-                    </ion-select>
+                    <ion-input (click)="openModalState('11 Bisagras y mecanismos de apertura', 11)">
+                        {{ status }}
+                    </ion-input>
                 </ion-item>
             </ion-col>
             <ion-col size="6">
                 <ion-item>
                     <ion-label position="floating">12-Chasis del camion lado copiloto</ion-label>
-                    <ion-select okText="Aceptar" cancelText="Cancelar">
-                      <ion-select-option value="01">Bien</ion-select-option>
-                      <ion-select-option value="02">Mal</ion-select-option>
-                    </ion-select>
+                    <ion-input (click)="openModalState('12 Chasis del camion lado copiloto', 12)">
+                        {{ status }}
+                    </ion-input>
                 </ion-item>
             </ion-col>
         </ion-row>
-<ion-row>
-    <ion-col size="4"></ion-col>
-    <ion-col size="4">
-        <ion-button color="primary" shape="round" expand="full" routerLink="/tabs/inside-register">
-            Siguiente
-        </ion-button>
-    </ion-col>
-    <ion-col size="4"></ion-col>
-</ion-row>
-
-    
-
-</ion-grid>
+        <ion-row>
+            <ion-col size="4"></ion-col>
+            <ion-col size="4">
+                <ion-button color="primary" shape="round" expand="full" routerLink="/tabs/inside-register">
+                    Siguiente
+                </ion-button>
+            </ion-col>
+            <ion-col size="4"></ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>
-
-

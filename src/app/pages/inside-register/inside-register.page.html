@@ -20,24 +20,13 @@
                 </ion-item>
             </ion-col>
         </ion-row>
-
-        <ion-row>
-            <ion-col size="6">
-                <ion-item shape="round">
-                    <ion-label>Hora: 15:30</ion-label>
-                    <ion-input readonly></ion-input>
-                </ion-item>
-            </ion-col>
-        </ion-row>
-
         <ion-row>
             <ion-col>
                 <ion-item>
                     <ion-label position="floating">13-Paredes laterales lado derecho del remolque</ion-label>
-                    <ion-select okText="Aceptar" cancelText="Cancelar">
-                        <ion-select-option value="01">Bien</ion-select-option>
-                        <ion-select-option value="02">Mal</ion-select-option>
-                    </ion-select>
+                    <ion-input (click)="openModalState('13 Paredes laterales lado derecho', 13)">
+                        {{ status }}
+                    </ion-input>
                 </ion-item>
             </ion-col>
         </ion-row>
@@ -45,10 +34,9 @@
             <ion-col>
                 <ion-item>
                     <ion-label position="floating">14-Fondo</ion-label>
-                    <ion-select okText="Aceptar" cancelText="Cancelar">
-                        <ion-select-option value="01">Bien</ion-select-option>
-                        <ion-select-option value="02">Mal</ion-select-option>
-                    </ion-select>
+                    <ion-input (click)="openModalState('14 Fondo', 14)">
+                        {{ status }}
+                    </ion-input>
                 </ion-item>
             </ion-col>
         </ion-row>
@@ -56,10 +44,9 @@
             <ion-col>
                 <ion-item>
                     <ion-label position="floating">15-Paredes laterales lado izquierdo del remolque</ion-label>
-                    <ion-select okText="Aceptar" cancelText="Cancelar">
-                        <ion-select-option value="01">Bien</ion-select-option>
-                        <ion-select-option value="02">Mal</ion-select-option>
-                    </ion-select>
+                    <ion-input (click)="openModalState('15 Paredes laterales lado izquierdo', 15)">
+                        {{ status }}
+                    </ion-input>
                 </ion-item>
             </ion-col>
         </ion-row>
@@ -67,10 +54,9 @@
             <ion-col>
                 <ion-item>
                     <ion-label position="floating">16-Techo del remolque</ion-label>
-                    <ion-select okText="Aceptar" cancelText="Cancelar">
-                        <ion-select-option value="01">Bien</ion-select-option>
-                        <ion-select-option value="02">Mal</ion-select-option>
-                    </ion-select>
+                    <ion-input (click)="openModalState('16 Techo del remolque', 16)">
+                        {{ status }}
+                    </ion-input>
                 </ion-item>
             </ion-col>
         </ion-row>
@@ -78,10 +64,9 @@
             <ion-col>
                 <ion-item>
                     <ion-label position="floating">17-Piso interior del remolque</ion-label>
-                    <ion-select okText="Aceptar" cancelText="Cancelar">
-                        <ion-select-option value="01">Bien</ion-select-option>
-                        <ion-select-option value="02">Mal</ion-select-option>
-                    </ion-select>
+                    <ion-input (click)="openModalState('17 Piso interior del remolque', 17)">
+                        {{ status }}
+                    </ion-input>
                 </ion-item>
             </ion-col>
         </ion-row>
@@ -89,18 +74,7 @@
             <ion-col>
                 <ion-item>
                     <ion-label position="floating">18-Medida</ion-label>
-                    <ion-select okText="Aceptar" cancelText="Cancelar">
-                        <ion-select-option value="01">Bien</ion-select-option>
-                        <ion-select-option value="02">Mal</ion-select-option>
-                    </ion-select>
-                </ion-item>
-            </ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col size="6">
-                <ion-item>
-                    <ion-label>Firma</ion-label>
-                    <ion-input type="text"></ion-input>
+                    <ion-input type="number"></ion-input>
                 </ion-item>
             </ion-col>
         </ion-row>

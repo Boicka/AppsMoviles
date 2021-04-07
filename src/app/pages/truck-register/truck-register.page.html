@@ -19,8 +19,8 @@
         <ion-row>
             <ion-col>
                 <ion-item shape="round">
-                    <ion-label position="floating">Número de sello de arribo</ion-label>
-                    <ion-input type="number" required></ion-input>
+                    <ion-label>Número de arribo: 1020</ion-label>
+                    <ion-input readonly></ion-input>
                 </ion-item>
             </ion-col>
         </ion-row>
@@ -32,10 +32,7 @@
                 </ion-item>
             </ion-col>
             <ion-col size="6">
-                <ion-item>
-                    <ion-label>Firma</ion-label>
-                    <ion-input type="text"></ion-input>
-                </ion-item>
+                <ion-button shape="round" (click)="openModalSign('Firma Guardia')" expand="full">Firma Guardia</ion-button>
             </ion-col>
         </ion-row>
         <ion-row>
@@ -46,10 +43,7 @@
                 </ion-item>
             </ion-col>
             <ion-col size="6">
-                <ion-item>
-                    <ion-label>Firma</ion-label>
-                    <ion-input type="text"></ion-input>
-                </ion-item>
+                <ion-button shape="round" (click)="openModalSign('Firma Operador')" expand="full">Firma Operador</ion-button>
             </ion-col>
         </ion-row>
         <ion-row>
