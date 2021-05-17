@@ -9,16 +9,22 @@
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
-  Firma de conformidad y enterado de lo señalado en el presente documento. 
-  *Al firmar este documento usted declara que las respuestas constan de total veracidad, de lo contrario se tomarán acciones en contra del señalado según se requiera.
-  <div class="sign"></div>
+  <div class="justify">
+    Firma de conformidad y enterado de lo señalado en el presente documento. 
+    *Al firmar este documento usted declara que las respuestas constan de total veracidad, de lo contrario se tomarán acciones en contra del señalado según se requiera.
+  </div>
+  <div class="signature-pad">
+    <div>
+      <canvas class="signature-pad-canvas" #canvas width="900" height="400" style="touch-action: none;"></canvas>
+    </div>
+  </div>
   <ion-grid>
     <ion-row>
       <ion-col size="4">
         <ion-button color="danger" expand="full" (click)="closeModal()">Cancelar</ion-button>
       </ion-col>
       <ion-col size="4">
-        <ion-button color="warning" expand="full">Limpiar</ion-button>
+        <ion-button color="warning" expand="full" (click)="clear()">Limpiar</ion-button>
       </ion-col>
       <ion-col size="4">
         <ion-button color="success" expand="full">Aceptar</ion-button>

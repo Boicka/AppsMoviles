@@ -9,12 +9,16 @@ import { SignPage } from '../sign/sign.page';
 })
 export class TruckRegisterPage implements OnInit {
 
-  constructor(public modalController:ModalController) { }
-
+  fecha: any;
+  constructor(public modalController:ModalController) {
+    this.fecha = Date();
+  }
+    
   ngOnInit() {
   }
 
   async openModalSign(titleModal){
+    
     const modal = await this.modalController.create({
       component: SignPage,
       /* cssClass: 'my-custom-class' */

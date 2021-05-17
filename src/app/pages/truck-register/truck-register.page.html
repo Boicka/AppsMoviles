@@ -5,13 +5,13 @@
         <ion-row>
             <ion-col size="6">
                 <ion-item shape="round">
-                    <ion-label>Fecha: 01/04/21</ion-label>
+                    <ion-label>Fecha: {{ fecha | date: 'dd/MM/yyyy' }}</ion-label>
                     <ion-input readonly></ion-input>
                 </ion-item>
             </ion-col>
             <ion-col size="6">
                 <ion-item shape="round">
-                    <ion-label>Hora: 15:30</ion-label>
+                    <ion-label>Hora: {{ fecha | date: 'h:mm:ss a' }}</ion-label>
                     <ion-input readonly></ion-input>
                 </ion-item>
             </ion-col>
