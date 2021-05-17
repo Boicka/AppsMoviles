@@ -27,14 +27,12 @@ export class InsideRegisterPage implements OnInit {
         'titulo': titleModal,
         'numero': this.id,
         'img': this.img,
-        'tx': this.txt
-
+        'txt': this.txt
       }
     });
     return await modal.present();
   }
   datos: { id: string, img: string, texto: string }[] = [
-
     {
       id: '13',
       img: '/assets/img/camion13.png',

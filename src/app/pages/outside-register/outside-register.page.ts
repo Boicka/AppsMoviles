@@ -28,7 +28,7 @@ export class OutsideRegisterPage implements OnInit {
         'titulo': titleModal,
         'numero': this.id,
         'img': this.img,
-        'tx': this.txt
+        'txt': this.txt
       }
     });
     return await modal.present();
@@ -38,7 +38,7 @@ export class OutsideRegisterPage implements OnInit {
     {
       id: '1',
       img: '/assets/img/camion1.png',
-      texto: 'El camarote debe contar con extinguidor. El camarote debe contar con ventilación suficiente.El copete debe estar cubierto de manera correcta. *Si cumple con los requisitos anteriores marcar en la opción "correcto".*'
+      texto: 'El camarote debe contar con extinguidor. El camarote debe contar con ventilación suficiente. El copete debe estar cubierto de manera correcta. *Si cumple con los requisitos anteriores marcar en la opción "correcto".*'
     },
     {
       id: '2',
