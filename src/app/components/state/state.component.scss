@@ -9,3 +9,15 @@
     text-align: justify;
     text-justify: inter-word;
 }
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button{
+    display: inline-block;
+    width: auto;
+    margin: 5%;
+}

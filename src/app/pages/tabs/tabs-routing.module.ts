@@ -21,10 +21,6 @@ const routes: Routes = [
         loadChildren: () => import('../truck-register/truck-register.module').then( m => m.TruckRegisterPageModule)
       },
       {
-        path: 'truck-register',
-        loadChildren: () => import('../truck-register/truck-register.module').then( m => m.TruckRegisterPageModule)
-      },
-      {
         path: 'outside-register',
         loadChildren: () => import('../outside-register/outside-register.module').then( m => m.OutsideRegisterPageModule)
       },

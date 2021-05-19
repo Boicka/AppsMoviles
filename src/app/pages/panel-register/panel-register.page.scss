@@ -1,3 +1,13 @@
 .rowborder{
     border-bottom: 1px solid #cccccc;
 }
+.export{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button-export{
+    display: inline-block;
+    width: auto;
+    margin: 5%;
+}

@@ -1,0 +1,17 @@
+.center {
+    display: block;
+    margin-left: 25%;
+    margin-right: 25%;
+    height: 250px;
+    padding-top: 10%;
+}
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button-login{
+    display: inline-block;
+    width: auto;
+    margin: 5%;
+}
