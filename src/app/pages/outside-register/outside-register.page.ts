@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { StateComponent } from '../../components/state/state.component';
+import{ GlobalConstants } from './../..//common/global-constants';
 
 @Component({
   selector: 'app-outside-register',
@@ -12,10 +13,21 @@ export class OutsideRegisterPage implements OnInit {
   id: String;
   img: String;
   txt: String;
-
-
+  status:boolean=true;
   constructor(public modalController: ModalController) { }
-
+  resp: any;
+  resp1: any = '';
+  resp2: any = '';
+  resp3: any = '';
+  resp4: any = '';
+  resp5: any = '';
+  resp6: any = '';
+  resp7: any = '';
+  resp8: any = '';
+  resp9: any = '';
+  resp10: any = '';
+  resp11: any = '';
+  resp12: any = '';
   ngOnInit() {
   }
 
@@ -31,7 +43,62 @@ export class OutsideRegisterPage implements OnInit {
         'txt': this.txt
       }
     });
-    return await modal.present();
+
+    await modal.present();
+    this.resp = await modal.onDidDismiss();
+    switch (number) {
+      case '1':
+        GlobalConstants.resp1 = this.resp;
+        this.resp1 = this.resp;
+        break;
+      case '2':
+        GlobalConstants.resp2 = this.resp;
+        this.resp2 = this.resp;
+        break;
+      case '3':
+        GlobalConstants.resp3 = this.resp;
+        this.resp3 = this.resp;
+        break;
+      case '4':
+        GlobalConstants.resp4 = this.resp;
+        this.resp4 = this.resp;
+        break;
+      case '5':
+        GlobalConstants.resp5 = this.resp;
+        this.resp5 = this.resp;
+        break;
+      case '6':
+        GlobalConstants.resp6 = this.resp;
+        this.resp6 = this.resp;
+        break;
+      case '7':
+        GlobalConstants.resp7 = this.resp;
+        this.resp7 = this.resp;
+        break;
+      case '8':
+        GlobalConstants.resp8 = this.resp;
+        this.resp8 = this.resp;
+        break;
+      case '9':
+        GlobalConstants.resp9 = this.resp;
+        this.resp9 = this.resp;
+        break;
+      case '10':
+        GlobalConstants.resp10 = this.resp;
+        this.resp10 = this.resp;
+        break;
+      case '11':
+        GlobalConstants.resp11 = this.resp;
+        this.resp11 = this.resp;
+        break;
+      case '12':
+        GlobalConstants.resp12 = this.resp;
+        this.resp12 = this.resp;
+        break;
+      default:
+        break;
+    }
+    this.validar();
   }
 
   datos: { id: string, img: string, texto: string }[] = [
@@ -96,8 +163,8 @@ export class OutsideRegisterPage implements OnInit {
       img: '/assets/img/camion12.png',
       texto: 'Chasis libre de objetos ajenos a la unidad. *Si cumple con los requisitos anteriores marcar en la opción "correcto".*'
     },
-
   ];
+
   buscar(id) {
     this.datos.forEach(data => {
       if (data.id === id) {
@@ -107,5 +174,23 @@ export class OutsideRegisterPage implements OnInit {
       }
     });
   };
+
+  validar(){
+    if(GlobalConstants.resp1 != '' &&
+    GlobalConstants.resp2 != '' &&
+    GlobalConstants.resp3 != '' &&
+    GlobalConstants.resp4 != '' &&
+    GlobalConstants.resp5 != '' &&
+    GlobalConstants.resp6 != '' &&
+    GlobalConstants.resp7 != '' &&
+    GlobalConstants.resp8 != '' &&
+    GlobalConstants.resp9 != '' &&
+    GlobalConstants.resp10 != '' &&
+    GlobalConstants.resp11 != '' &&
+    GlobalConstants.resp12 != ''){
+         this.status = false;
+         GlobalConstants.statusOut = true;
+    }
+  }
 
 }

@@ -16,6 +16,8 @@ export class SignPage implements OnInit, AfterViewInit {
   canvasWidth: number;
   canvasHeight: number;
 
+  
+
   constructor(public modalController: ModalController,
               private elementRef: ElementRef,
               private base64ToGallery: Base64ToGallery) {
@@ -50,10 +52,12 @@ export class SignPage implements OnInit, AfterViewInit {
 
   save(): void {
     const img = this.signaturePad.toDataURL();
-    this.base64ToGallery.base64ToGallery(img).then(
+    localStorage.setItem("10001", img);
+
+    /* this.base64ToGallery.base64ToGallery(img).then(
       res => console.log('Saved image to gallery ', res),
       err => console.log('Error saving image to gallery ', err)
-    );
+    ); */
   }
 
   isCanvasBlank(): boolean {

@@ -3,28 +3,28 @@
 <ion-content class="ion-padding">
     
     <ion-list>
-        <ion-item  routerLink="/tabs/truck-register"  detail>
-             <ion-label>Registro de vehículo</ion-label>
-             <ion-radio slot="start" value="registro de vehículo"></ion-radio>
+        <ion-item routerLink="/tabs/truck-register" detail>
+            <ion-checkbox  slot="start" value="registro de vehículo" checked="{{statusTruck}}" disabled="true"></ion-checkbox>
+            <ion-label >Registro de vehículo</ion-label>
         </ion-item>
     </ion-list>
 
     <ion-list>    
         <ion-item routerLink="/tabs/outside-register" detail>
-            <ion-radio slot="start" value="parte externa"></ion-radio>
+            <ion-checkbox  slot="start" value="parte externa" checked="{{statusOut}}" disabled="true"></ion-checkbox>
             <ion-label>Parte externa</ion-label>
         </ion-item>
     </ion-list>
         
     <ion-list> 
         <ion-item routerLink="/tabs/inside-register" detail>       
-             <ion-radio slot="start" value="parte interna"></ion-radio>
+             <ion-checkbox  slot="start" value="parte interna" checked="{{statusIn}}" disabled="true"></ion-checkbox>
              <ion-label>Parte interna</ion-label>
         </ion-item>
     </ion-list>
 
     <div class="add">
-      <ion-button class="button-add" routerLink="/tabs/home" shape="round" expand="full" color="warning">
+      <ion-button class="button-add" (click)="addRegister()" routerLink="/tabs/panel-register" shape="round" expand="full" color="warning" disabled='{{statusG}}'>
         Añadir registro
       </ion-button>
     </div>

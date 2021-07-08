@@ -18,13 +18,13 @@
         </ion-col>
     </ion-row>
     <ion-list>
-        <ion-item>
-            <ion-label>10000</ion-label>
-            <ion-label>Castores</ion-label>
-            <ion-label>23/03/21</ion-label>
-            <ion-button size="small" color="secondary">
+        <ion-item *ngFor="let registro of registros" >
+            <ion-label>{{registro.noArribo}}</ion-label>
+            <ion-label>{{registro.compTranspor}}</ion-label>
+            <ion-label>{{registro.fecha}}</ion-label>
+           <!--  <ion-button size="small" color="secondary">
                 <ion-icon name="create"></ion-icon>
-            </ion-button>
+            </ion-button> -->
             <ion-button size="small" color="danger">
                 <ion-icon name="trash"></ion-icon>
             </ion-button>
@@ -32,76 +32,7 @@
                 <ion-icon name="document"></ion-icon>
             </ion-button>
         </ion-item>
-        <ion-item>
-            <ion-label>10001</ion-label>
-            <ion-label>Castores</ion-label>
-            <ion-label>23/03/21</ion-label>
-            <ion-button size="small" color="secondary">
-                <ion-icon name="create"></ion-icon>
-            </ion-button>
-            <ion-button size="small" color="danger">
-                <ion-icon name="trash"></ion-icon>
-            </ion-button>
-            <ion-button size="small" color="tertiary">
-                <ion-icon name="document"></ion-icon>
-            </ion-button>
-        </ion-item>
-        <ion-item>
-            <ion-label>10002</ion-label>
-            <ion-label>Tracusa</ion-label>
-            <ion-label>24/03/21</ion-label>
-            <ion-button size="small" color="secondary">
-                <ion-icon name="create"></ion-icon>
-            </ion-button>
-            <ion-button size="small" color="danger">
-                <ion-icon name="trash"></ion-icon>
-            </ion-button>
-            <ion-button size="small" color="tertiary">
-                <ion-icon name="document"></ion-icon>
-            </ion-button>
-        </ion-item>
-        <ion-item>
-            <ion-label>10003</ion-label>
-            <ion-label>Tracusa</ion-label>
-            <ion-label>26/03/21</ion-label>
-            <ion-button size="small" color="secondary">
-                <ion-icon name="create"></ion-icon>
-            </ion-button>
-            <ion-button size="small" color="danger">
-                <ion-icon name="trash"></ion-icon>
-            </ion-button>
-            <ion-button size="small" color="tertiary">
-                <ion-icon name="document"></ion-icon>
-            </ion-button>
-        </ion-item>
-        <ion-item>
-            <ion-label>10004</ion-label>
-            <ion-label>Tres Guerras</ion-label>
-            <ion-label>27/03/21</ion-label>
-            <ion-button size="small" color="secondary">
-                <ion-icon name="create"></ion-icon>
-            </ion-button>
-            <ion-button size="small" color="danger">
-                <ion-icon name="trash"></ion-icon>
-            </ion-button>
-            <ion-button size="small" color="tertiary">
-                <ion-icon name="document"></ion-icon>
-            </ion-button>
-        </ion-item>
-        <ion-item>
-            <ion-label>10005</ion-label>
-            <ion-label>Julian de Obregon</ion-label>
-            <ion-label>28/03/21</ion-label>
-            <ion-button size="small" color="secondary">
-                <ion-icon name="create"></ion-icon>
-            </ion-button>
-            <ion-button size="small" color="danger">
-                <ion-icon name="trash"></ion-icon>
-            </ion-button>
-            <ion-button size="small" color="tertiary">
-                <ion-icon name="document"></ion-icon>
-            </ion-button>
-        </ion-item>
+        
     </ion-list>
 
     <div class="export">

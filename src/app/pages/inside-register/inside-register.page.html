@@ -16,7 +16,7 @@
             <ion-col>
                 <ion-item shape="round">
                     <ion-label position="floating">Nombre del embarque</ion-label>
-                    <ion-input type="text" required></ion-input>
+                    <ion-input (keypress)="onChangeE($event)" type="text" [(ngModel)]="Embarque" required></ion-input>
                 </ion-item>
             </ion-col>
         </ion-row>
@@ -24,8 +24,7 @@
             <ion-col>
                 <ion-item>
                     <ion-label position="floating">13-Paredes laterales lado derecho del remolque</ion-label>
-                    <ion-input (click)="openModalState('13 Paredes laterales lado derecho', '13')">
-                        {{ status }}
+                    <ion-input value="{{ resp13.data }}"  (click)="openModalState('13 Paredes laterales lado derecho', '13')" required>
                     </ion-input>
                 </ion-item>
             </ion-col>
@@ -34,8 +33,7 @@
             <ion-col>
                 <ion-item>
                     <ion-label position="floating">14-Fondo</ion-label>
-                    <ion-input (click)="openModalState('14 Fondo', '14')">
-                        {{ status }}
+                    <ion-input value="{{ resp14.data }}"  (click)="openModalState('14 Fondo', '14')" required>
                     </ion-input>
                 </ion-item>
             </ion-col>
@@ -44,8 +42,7 @@
             <ion-col>
                 <ion-item>
                     <ion-label position="floating">15-Paredes laterales lado izquierdo del remolque</ion-label>
-                    <ion-input (click)="openModalState('15 Paredes laterales lado izquierdo', '15')">
-                        {{ status }}
+                    <ion-input value="{{ resp15.data }}"  (click)="openModalState('15 Paredes laterales lado izquierdo', '15')" required>
                     </ion-input>
                 </ion-item>
             </ion-col>
@@ -54,8 +51,7 @@
             <ion-col>
                 <ion-item>
                     <ion-label position="floating">16-Techo del remolque</ion-label>
-                    <ion-input (click)="openModalState('16 Techo del remolque', '16')">
-                        {{ status }}
+                    <ion-input value="{{ resp16.data }}"  (click)="openModalState('16 Techo del remolque', '16')" required>
                     </ion-input>
                 </ion-item>
             </ion-col>
@@ -64,8 +60,7 @@
             <ion-col>
                 <ion-item>
                     <ion-label position="floating">17-Piso interior del remolque</ion-label>
-                    <ion-input (click)="openModalState('17 Piso interior del remolque', '17')">
-                        {{ status }}
+                    <ion-input value="{{ resp17.data }}" (click)="openModalState('17 Piso interior del remolque', '17')" required>
                     </ion-input>
                 </ion-item>
             </ion-col>
@@ -74,12 +69,12 @@
             <ion-col>
                 <ion-item>
                     <ion-label position="floating">18-Medida</ion-label>
-                    <ion-input type="number"></ion-input>
+                    <ion-input (keypress)="onChangeM($event)" type="number" [(ngModel)]="medida" required></ion-input>
                 </ion-item>
             </ion-col>
         </ion-row>
         <div class="next">
-            <ion-button class="button-next" routerLink="/tabs/home" shape="round" expand="full">
+            <ion-button class="button-next" routerLink="/tabs/home" shape="round" expand="full" disabled='{{status}}'>
                 Siguiente
             </ion-button>
         </div>

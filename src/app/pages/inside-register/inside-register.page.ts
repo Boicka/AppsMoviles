@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { StateComponent } from '../..//components/state/state.component';
+import{ GlobalConstants } from './../..//common/global-constants';
 
 @Component({
   selector: 'app-inside-register',
@@ -12,7 +13,17 @@ export class InsideRegisterPage implements OnInit {
   id: String;
   img: String;
   txt: String;
-
+  embarque: string;
+  medida: string;
+  status:boolean=true;
+  resp: any;
+  resp12: any = '';
+  resp13: any = '';
+  resp14: any = '';
+  resp15: any = '';
+  resp16: any = '';
+  resp17: any = '';
+  resp18: any = '';
   constructor(public modalController: ModalController) { }
 
   ngOnInit() {
@@ -30,7 +41,33 @@ export class InsideRegisterPage implements OnInit {
         'txt': this.txt
       }
     });
-    return await modal.present();
+    await modal.present();
+    this.resp = await modal.onDidDismiss();
+    switch (number) {
+      case '13':
+        GlobalConstants.resp13 = this.resp;
+        this.resp13 = this.resp;
+        break;
+      case '14':
+        GlobalConstants.resp14 = this.resp;
+        this.resp14 = this.resp;
+        break;
+      case '15':
+        GlobalConstants.resp15 = this.resp;
+        this.resp15 = this.resp;
+        break;
+      case '16':
+        GlobalConstants.resp16 = this.resp;
+        this.resp16 = this.resp;
+        break;
+      case '17':
+        GlobalConstants.resp17 = this.resp;
+        this.resp17 = this.resp;
+        break;
+      default:
+        break;
+    }
+    this.validar();
   }
   datos: { id: string, img: string, texto: string }[] = [
     {
@@ -70,4 +107,24 @@ export class InsideRegisterPage implements OnInit {
     });
   };
 
+  validar(){
+    if(GlobalConstants.resp12 != '' &&
+    GlobalConstants.resp13 != '' &&
+    GlobalConstants.resp14 != '' &&
+    GlobalConstants.resp15 != '' &&
+    GlobalConstants.resp16 != '' &&
+    GlobalConstants.resp17 != '' &&
+    GlobalConstants.resp18 != ''){
+         this.status = false;
+         GlobalConstants.statusIn = true;
+    }
+  }
+
+  onChangeE(e){
+    GlobalConstants.resp12 = this.embarque;
+  }
+
+  onChangeM(e){
+    GlobalConstants.resp18 = this.medida;
+  }
 }

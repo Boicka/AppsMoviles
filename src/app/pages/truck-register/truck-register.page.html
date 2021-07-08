@@ -19,8 +19,8 @@
         <ion-row>
             <ion-col>
                 <ion-item shape="round">
-                    <ion-label>Número de arribo: 1020</ion-label>
-                    <ion-input readonly></ion-input>
+                    <ion-label>Número de arribo:</ion-label>
+                    <ion-input value="1020" readonly></ion-input>
                 </ion-item>
             </ion-col>
         </ion-row>
@@ -28,22 +28,24 @@
             <ion-col size="6">
                 <ion-item>
                     <ion-label position="floating">Nombre Guardia</ion-label>
-                    <ion-input type="text"></ion-input>
+                    <ion-input (keypress)="onChangeNG($event)" type="text"></ion-input>
                 </ion-item>
             </ion-col>
             <ion-col size="6">
-                <ion-button shape="round" (click)="openModalSign('Firma Guardia')" expand="full">Firma Guardia</ion-button>
+                <ion-button shape="round" (click)="openModalSign('Firma Guardia')" expand="full">Firma Guardia
+                </ion-button>
             </ion-col>
         </ion-row>
         <ion-row>
             <ion-col size="6">
                 <ion-item>
                     <ion-label position="floating">Nombre Operador</ion-label>
-                    <ion-input type="text"></ion-input>
+                    <ion-input (keypress)="onChangeNO($event)" type="text"></ion-input>
                 </ion-item>
             </ion-col>
             <ion-col size="6">
-                <ion-button shape="round" (click)="openModalSign('Firma Operador')" expand="full">Firma Operador</ion-button>
+                <ion-button shape="round" (click)="openModalSign('Firma Operador')" expand="full">Firma Operador
+                </ion-button>
             </ion-col>
         </ion-row>
         <ion-row>
@@ -63,19 +65,19 @@
             <ion-col size="6">
                 <ion-item>
                     <ion-label position="floating">Número de Camión</ion-label>
-                    <ion-input type="text"></ion-input>
+                    <ion-input (keypress)="onChangeNCam($event)" type="text"></ion-input>
                 </ion-item>
             </ion-col>
             <ion-col size="6">
                 <ion-item>
                     <ion-label position="floating">Número de Caja</ion-label>
-                    <ion-input type="number"></ion-input>
+                    <ion-input (keypress)="onChangeMCaj($event)" type="number"></ion-input>
                 </ion-item>
             </ion-col>
         </ion-row>
 
         <div class="next">
-            <ion-button class="button-next" routerLink="/tabs/outside-register" shape="round">
+            <ion-button class="button-next" routerLink="/tabs/outside-register" shape="round" disabled='{{status}}'>
                 Siguiente
             </ion-button>
         </div>

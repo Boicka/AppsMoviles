@@ -8,12 +8,26 @@ import { ModalController } from '@ionic/angular';
 })
 export class StateComponent implements OnInit {
 
+  respuesta: string = '';
+
   constructor(public modalController: ModalController) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
-  closeModal(){
+  closeModal() {
     this.modalController.dismiss();
- }
- 
+  }
+
+  onSucess(): string {
+    this.respuesta = 'Correcto';
+    this.modalController.dismiss(this.respuesta);
+    return 'respuesta';
+  }
+  
+  onDanger() {
+    this.respuesta = 'Incorrecto';
+    this.modalController.dismiss(this.respuesta);
+    return 'respuesta';
+  }
+
 }
