@@ -28,7 +28,23 @@ export class OutsideRegisterPage implements OnInit {
   resp10: any = '';
   resp11: any = '';
   resp12: any = '';
+
   ngOnInit() {
+  }
+
+  ionViewWillEnter() {
+    this.resp1 = GlobalConstants.resp1;
+    this.resp2 = GlobalConstants.resp2;
+    this.resp3 = GlobalConstants.resp3;
+    this.resp4 = GlobalConstants.resp4;
+    this.resp5 = GlobalConstants.resp5;
+    this.resp6 = GlobalConstants.resp6;
+    this.resp7 = GlobalConstants.resp7;
+    this.resp8 = GlobalConstants.resp8;
+    this.resp9 = GlobalConstants.resp9;
+    this.resp10 = GlobalConstants.resp10;
+    this.resp11 = GlobalConstants.resp11;
+    this.resp12 = GlobalConstants.resp12;
   }
 
   async openModalState(titleModal, number) {

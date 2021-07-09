@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { SignPage } from '../sign/sign.page';
@@ -12,24 +13,43 @@ export class TruckRegisterPage implements OnInit {
 
   fecha: any;
   status:boolean=true;
-  rfecha: any = '12';
-  hora: any = '21';
-  arribo: any = '12';
-  nGuardia: any = 'asd';
-  fGuardia: any = 'xd';
-  nOperador: any = 'asd';
-  fOperador: any = 'xd';
-  compania: any = 'sad';
-  nCamion: any = 'as';
-  nCaja: any = 'asd';
+  rfecha: any = '';
+  hora: any = '';
+  arribo: any = '';
+  nGuardia: any = '';
+  fGuardia: any = '';
+  nOperador: any = '';
+  fOperador: any = '';
+  compania: any = '';
+  nCamion: any = '';
+  nCaja: any = '';
+
+  pipe = new DatePipe('en-US');
+  
   constructor(public modalController:ModalController) {
-    this.fecha = Date();
+    
   }
     
   ngOnInit() {
+    
   }
 
-  ngOnDestroy(){
+  ionViewWillEnter() {
+    this.fecha = Date();
+    
+    GlobalConstants.rfecha = this.pipe.transform(this.fecha, 'dd/MM/yyyy');
+    GlobalConstants.hora = this.pipe.transform(this.fecha, 'h:mm:ss a');
+    GlobalConstants.arribo = GlobalConstants.nArribo;
+    this.arribo = GlobalConstants.arribo;
+    this.nGuardia = GlobalConstants.nGuardia;
+    this.nOperador = GlobalConstants.nOperador;
+    if (GlobalConstants.compania!='') {
+      this.compania = GlobalConstants.compania
+    } else {
+      this.compania ="";
+    }
+    this.nCamion = GlobalConstants.nCamion;
+    this.nCaja = GlobalConstants.nCaja;
   }
 
   async openModalSign(titleModal){
@@ -62,28 +82,26 @@ export class TruckRegisterPage implements OnInit {
 
   onChangeNG(e){
     GlobalConstants.nGuardia = this.nGuardia;
+    this.validar();
   }
 
   onChangeNO(e){
     GlobalConstants.nOperador = this.nOperador;
+    this.validar();
+  }
+
+  onChangeComp(e){
+    GlobalConstants.compania = e.target.value;
+    this.validar();
   }
 
   onChangeNCam(e){
     GlobalConstants.nCamion = this.nCamion;
+    this.validar();
   }
 
   onChangeMCaj(e){
     GlobalConstants.nCaja = this.nCaja;
-    GlobalConstants.rfecha = 'xd';
-    GlobalConstants.hora = 'xd';
-    GlobalConstants.arribo = 'xd';
-    GlobalConstants.nGuardia = 'xd';
-    GlobalConstants.fGuardia = 'xd';
-    GlobalConstants.nOperador = 'xd';
-    GlobalConstants.fOperador = 'xd';
-    GlobalConstants.compania = 'xd';
-    GlobalConstants.nCamion = 'xd';
-    GlobalConstants.nCaja = 'xd';
     this.validar();
   }
 }

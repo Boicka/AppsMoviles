@@ -15,4 +15,8 @@ export class PanelRegisterPage implements OnInit {
   ngOnInit() {
   }
 
+  buscar(e){
+    
+  }
+
 }

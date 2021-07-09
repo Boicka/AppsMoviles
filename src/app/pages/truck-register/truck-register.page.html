@@ -3,6 +3,14 @@
 <ion-content class="ion-padding">
     <ion-grid>
         <ion-row>
+            <ion-col>
+                <ion-item shape="round">
+                    <ion-label>Número de arribo:</ion-label>
+                    <ion-input value="{{ arribo }}" readonly></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
             <ion-col size="6">
                 <ion-item shape="round">
                     <ion-label>Fecha: {{ fecha | date: 'dd/MM/yyyy' }}</ion-label>
@@ -17,22 +25,14 @@
             </ion-col>
         </ion-row>
         <ion-row>
-            <ion-col>
-                <ion-item shape="round">
-                    <ion-label>Número de arribo:</ion-label>
-                    <ion-input value="1020" readonly></ion-input>
-                </ion-item>
-            </ion-col>
-        </ion-row>
-        <ion-row>
             <ion-col size="6">
                 <ion-item>
                     <ion-label position="floating">Nombre Guardia</ion-label>
-                    <ion-input (keypress)="onChangeNG($event)" type="text"></ion-input>
+                    <ion-input (keypress)="onChangeNG($event)" type="text" [(ngModel)]="nGuardia"></ion-input>
                 </ion-item>
             </ion-col>
             <ion-col size="6">
-                <ion-button shape="round" (click)="openModalSign('Firma Guardia')" expand="full">Firma Guardia
+                <ion-button shape="round" (click)="openModalSign('Guardia')" expand="full">Firma Guardia
                 </ion-button>
             </ion-col>
         </ion-row>
@@ -40,11 +40,11 @@
             <ion-col size="6">
                 <ion-item>
                     <ion-label position="floating">Nombre Operador</ion-label>
-                    <ion-input (keypress)="onChangeNO($event)" type="text"></ion-input>
+                    <ion-input (keypress)="onChangeNO($event)" type="text" [(ngModel)]="nOperador"></ion-input>
                 </ion-item>
             </ion-col>
             <ion-col size="6">
-                <ion-button shape="round" (click)="openModalSign('Firma Operador')" expand="full">Firma Operador
+                <ion-button shape="round" (click)="openModalSign('Operador')" expand="full">Firma Operador
                 </ion-button>
             </ion-col>
         </ion-row>
@@ -52,7 +52,7 @@
             <ion-col>
                 <ion-item>
                     <ion-label position="floating">Compañia Transportista</ion-label>
-                    <ion-select okText="Aceptar" cancelText="Cancelar">
+                    <ion-select okText="Aceptar" cancelText="Cancelar" (ionChange)="onChangeComp($event)" [(ngModel)]="compania">
                         <ion-select-option value="Castores">Castores</ion-select-option>
                         <ion-select-option value="Tracusa">Tracusa</ion-select-option>
                         <ion-select-option value="Tres Guerras">Tres Guerras</ion-select-option>
@@ -65,13 +65,13 @@
             <ion-col size="6">
                 <ion-item>
                     <ion-label position="floating">Número de Camión</ion-label>
-                    <ion-input (keypress)="onChangeNCam($event)" type="text"></ion-input>
+                    <ion-input (keypress)="onChangeNCam($event)" type="text" [(ngModel)]="nCamion"></ion-input>
                 </ion-item>
             </ion-col>
             <ion-col size="6">
                 <ion-item>
                     <ion-label position="floating">Número de Caja</ion-label>
-                    <ion-input (keypress)="onChangeMCaj($event)" type="number"></ion-input>
+                    <ion-input (keypress)="onChangeMCaj($event)" type="number" [(ngModel)]="nCaja"></ion-input>
                 </ion-item>
             </ion-col>
         </ion-row>

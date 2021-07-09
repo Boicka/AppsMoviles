@@ -16,6 +16,7 @@ export class HomePage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
   ionViewWillEnter() {
@@ -34,33 +35,35 @@ export class HomePage implements OnInit {
   addRegister(){
     GlobalConstants.registros.push(
       {
-        fecha: "08/07/2021",
-        hora: "10:30",
-        noArribo: "10002",
-        fGuardia: "XD",
-        fOperador: "XD",
-        compTranspor: "Castores",
-        nCamion: "XD",
-        nCaja: "XD",
-        camarote: "XD",
-        motor: "XD",
-        defensa: "XD",
-        llantasCamion: "XD",
-        tanque: "XD",
-        qRueda: "XD",
-        llantasRemolque: "XD",
-        bolsaAire: "XD",
-        chasisChofer: "XD",
-        puertaRemolque: "XD",
-        bisagra: "XD",
-        chasisCopiloto: "XD",
-        nomEmbarque: "XD",
-        paredDerecho: "XD",
-        fondo: "XD",
-        paredIzquierdo: "XD",
-        techoRemolque: "XD",
-        pisoRemolque: "XD",
-        medida: "XD"
+        fecha: GlobalConstants.rfecha,
+        hora: GlobalConstants.hora,
+        noArribo: GlobalConstants.arribo,
+        nGuardia: GlobalConstants.nGuardia,
+        fGuardia:GlobalConstants.fGuardia,
+        nOperador:GlobalConstants.nOperador,
+        fOperador:GlobalConstants.fOperador,
+        compTranspor:GlobalConstants.compania,
+        nCamion:GlobalConstants.nCamion,
+        nCaja:GlobalConstants.nCaja,
+        camarote:GlobalConstants.resp1,
+        motor:GlobalConstants.resp2,
+        defensa:GlobalConstants.resp3,
+        llantasCamion:GlobalConstants.resp4,
+        tanque:GlobalConstants.resp5,
+        qRueda:GlobalConstants.resp6,
+        llantasRemolque:GlobalConstants.resp7,
+        bolsaAire:GlobalConstants.resp8,
+        chasisChofer:GlobalConstants.resp9,
+        puertaRemolque:GlobalConstants.resp10,
+        bisagra:GlobalConstants.resp11,
+        chasisCopiloto:GlobalConstants.resp12,
+        nomEmbarque:GlobalConstants.nomEmbarque,
+        paredDerecho:GlobalConstants.resp13,
+        fondo:GlobalConstants.resp14,
+        paredIzquierdo:GlobalConstants.resp15,
+        techoRemolque:GlobalConstants.resp16,
+        pisoRemolque:GlobalConstants.resp17,
+        medida:GlobalConstants.resp18
       }
     );
     GlobalConstants.rfecha= '';
@@ -85,6 +88,7 @@ export class HomePage implements OnInit {
     GlobalConstants.resp10= '';
     GlobalConstants.resp11= '';
     GlobalConstants.resp12= '';
+    GlobalConstants.nomEmbarque= '';
     GlobalConstants.resp13= '';
     GlobalConstants.resp14= '';
     GlobalConstants.resp15= '';
@@ -95,6 +99,7 @@ export class HomePage implements OnInit {
     GlobalConstants.statusIn=false;
     GlobalConstants.statusOut=false;
     GlobalConstants.statusG=true;
+    GlobalConstants.nArribo += 1;
   }
 
 

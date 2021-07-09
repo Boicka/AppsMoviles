@@ -1,7 +1,7 @@
 <app-header namepage="Historial de Registros"></app-header>
 
 <ion-content class="ion-padding">
-    <ion-searchbar placeholder="Buscar" showCancelButton="focus"></ion-searchbar>
+    <ion-searchbar placeholder="Buscar" showCancelButton="focus" animated (ionChange)="buscar($event)"></ion-searchbar>
 
     <ion-row class="rowborder">
         <ion-col size="2" class="ion-text-center">

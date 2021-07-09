@@ -3,6 +3,7 @@ import { ModalController } from '@ionic/angular';
 
 import SignaturePad from 'signature_pad';
 import { Base64ToGallery } from '@ionic-native/base64-to-gallery/ngx';
+import { GlobalConstants } from '../../common/global-constants';
 
 @Component({
   selector: 'app-sign',
@@ -15,7 +16,7 @@ export class SignPage implements OnInit, AfterViewInit {
   signaturePad: any;
   canvasWidth: number;
   canvasHeight: number;
-
+  titulo: any;
   
 
   constructor(public modalController: ModalController,
@@ -52,7 +53,16 @@ export class SignPage implements OnInit, AfterViewInit {
 
   save(): void {
     const img = this.signaturePad.toDataURL();
-    localStorage.setItem("10001", img);
+    localStorage.setItem(GlobalConstants.nArribo + "-f"+this.titulo, img);
+    if (this.titulo == "Guardia") {
+      GlobalConstants.fGuardia = GlobalConstants.nArribo + "-f"+this.titulo;
+    } else {
+      GlobalConstants.fOperador = GlobalConstants.nArribo + "-f"+this.titulo;
+    }
+    this.modalController.dismiss();
+    /* var dataImage = localStorage.getItem('10001-fOperador');
+    var bannerImg = document.querySelector('#firma');
+    bannerImg.setAttribute('src',dataImage); */
 
     /* this.base64ToGallery.base64ToGallery(img).then(
       res => console.log('Saved image to gallery ', res),

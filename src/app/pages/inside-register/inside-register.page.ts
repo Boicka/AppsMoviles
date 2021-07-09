@@ -14,7 +14,6 @@ export class InsideRegisterPage implements OnInit {
   img: String;
   txt: String;
   embarque: string;
-  medida: string;
   status:boolean=true;
   resp: any;
   resp12: any = '';
@@ -27,6 +26,16 @@ export class InsideRegisterPage implements OnInit {
   constructor(public modalController: ModalController) { }
 
   ngOnInit() {
+  }
+
+  ionViewWillEnter() {
+    this.embarque = GlobalConstants.nomEmbarque;
+    this.resp13 = GlobalConstants.resp13;
+    this.resp14 = GlobalConstants.resp14;
+    this.resp15 = GlobalConstants.resp15;
+    this.resp16 = GlobalConstants.resp16;
+    this.resp17 = GlobalConstants.resp17;
+    this.resp18 = GlobalConstants.resp18;
   }
 
   async openModalState(titleModal, number) {
@@ -108,7 +117,7 @@ export class InsideRegisterPage implements OnInit {
   };
 
   validar(){
-    if(GlobalConstants.resp12 != '' &&
+    if(GlobalConstants.nomEmbarque != '' &&
     GlobalConstants.resp13 != '' &&
     GlobalConstants.resp14 != '' &&
     GlobalConstants.resp15 != '' &&
@@ -121,10 +130,12 @@ export class InsideRegisterPage implements OnInit {
   }
 
   onChangeE(e){
-    GlobalConstants.resp12 = this.embarque;
+    GlobalConstants.nomEmbarque = this.embarque;
+    this.validar();
   }
 
   onChangeM(e){
-    GlobalConstants.resp18 = this.medida;
+    GlobalConstants.resp18 = this.resp18;
+    this.validar();
   }
 }
