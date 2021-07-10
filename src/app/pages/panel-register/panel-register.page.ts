@@ -14,7 +14,7 @@ export class PanelRegisterPage implements OnInit {
 
   registros = GlobalConstants.registros;
   pdfObj: any;
-  msg = 'PDF Generado tu mama no te quiere';
+  msg = 'PDF Generado';
 
 
   constructor(public toastController:ToastController) { 
