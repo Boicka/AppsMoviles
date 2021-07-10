@@ -23,6 +23,7 @@
     "@ionic-native/base64-to-gallery": "^5.33.0",
     "@ionic-native/core": "^5.33.0",
     "@ionic/angular": "^5.5.2",
+    "pdfmake": "^0.2.0",
     "rxjs": "~6.6.0",
     "signature_pad": "^3.0.0-beta.4",
     "tslib": "^2.0.0",
