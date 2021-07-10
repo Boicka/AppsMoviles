@@ -4,6 +4,7 @@ import pdfMaker from "pdfmake/build/pdfmake";
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 import { ToastController } from '@ionic/angular';
 pdfMaker.vfs = pdfFonts.pdfMake.vfs;
+import * as XLSX from 'xlsx'; 
 
 @Component({
   selector: 'app-panel-register',
@@ -15,6 +16,8 @@ export class PanelRegisterPage implements OnInit {
   registros = GlobalConstants.registros;
   pdfObj: any;
   msg = 'PDF Generado';
+  fileName= 'RegistrosGPS.xlsx';
+  vFecha = '';
 
 
   constructor(public toastController:ToastController) { 
@@ -174,5 +177,22 @@ export class PanelRegisterPage implements OnInit {
       img.src = url;
     });
   }
+
+  exportexcel(): void 
+  {
+        this.vFecha = Date();
+        console.log(this.vFecha);
+         /* table id is passed over here */   
+        let element = document.getElementById('excel-table'); 
+        const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
+  
+         /* generate workbook and add the worksheet */
+        const wb: XLSX.WorkBook = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, 'Reporte de registro');
+  
+         /* save to file */
+        XLSX.writeFile(wb, this.fileName);
+        
+      }
 
 }

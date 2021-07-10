@@ -36,8 +36,78 @@
     </ion-list>
 
     <div class="export">
-        <ion-button class="button-export" expand="full" color="success" shape="round">
+        <ion-button class="button-export" expand="full" color="success" shape="round" (click)="exportexcel()">
             Exportar Excel
         </ion-button>
+    </div>
+    <div style="display: none;">
+        <table id = "excel-table"> 
+            <tr>
+              <th>GPS Secure Registros de embarques</th>
+            </tr>
+            <tr>
+              <th>Fecha:</th>
+              <th>{{vFecha | date: 'dd/MM/yy'}}</th>
+              <th>Hora:</th>
+              <th>{{ vFecha | date: 'h:mm:ss a' }}</th>
+            </tr>
+            <tr>
+              <th></th>
+            </tr>
+            <tr>
+              <th>Fecha Registro</th>
+              <th>Nombre guardia</th>
+              <th>Nombre operador</th>
+              <th>Compañia transportista</th>
+              <th>Numero de camión</th>
+              <th>Numero de caja</th>
+              <th>1.-Camarote</th>
+              <th>2.-Motor</th>
+              <td>3.-Defensa</td>
+              <th>4.-Llanta(Camión)</th>
+              <th>5.-Tanque de combustible</th>
+              <th>6.-Quinta rueda</th>
+              <th>7.-Llantas(Remolque)</th>
+              <th>8.-Bolsas de aire</th>
+              <th>9.-Chasis de camión lado piloto</th>
+              <th>10.-Puertas de remolque</th>
+              <th>11.-Bisagras y mecanismos de apertura</th>
+              <th>12.-Chasis camión lado copiloto</th>
+              <th>Revisión 2 Parte Interna (Exclusivo Embarques)</th>
+              <th>13.-Paredes Laterales Lado Derecho del remolque</th>
+              <th>14.-Fondo</th>
+              <th>15.-Paredes Laterales Lado Izq del remolque</th>
+              <th>16.-Techo Remolque</th>
+              <th>17.-Piso interior del remolque</th>
+              <th>18.-Medida</th>
+          </tr>
+          <tr *ngFor="let registro of registros">
+              <th>{{registro.fecha}}</th>
+              <th>{{registro.nGuardia}}</th>
+              <th>{{registro.nOperador}}</th>
+              <th>{{registro.compTranspor}}</th>
+              <th>{{registro.nCamion}}</th>
+              <th>{{registro.nCaja}}</th>
+              <th>{{registro.camarote}}</th>
+              <th>{{registro.motor}}</th>
+              <th>{{registro.defensa}}</th>
+              <th>{{registro.llantasCamion}}</th>
+              <th>{{registro.tanque}}</th>
+              <th>{{registro.qRueda}}</th>
+              <th>{{registro.llantasRemolque}}</th>
+              <th>{{registro.bolsaAire}}</th>
+              <th>{{registro.chasisChofer}}</th>
+              <th>{{registro.puertaRemolque}}</th>
+              <th>{{registro.bisagra}}</th>
+              <th>{{registro.chasisCopiloto}}</th>
+              <th>{{registro.nomEmbarque}}</th>
+              <th>{{registro.paredDerecho}}</th>
+              <th>{{registro.fondo}}</th>
+              <th>{{registro.paredIzquierdo}}</th>
+              <th>{{registro.techoRemolque}}</th>
+              <th>{{registro.pisoRemolque}}</th>
+              <th>{{registro.medida}}</th>
+          </tr>
+          </table>
     </div>
 </ion-content>
