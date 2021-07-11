@@ -24,7 +24,7 @@ export class StateComponent implements OnInit {
     return 'respuesta';
   }
   
-  onDanger() {
+  onDanger(): string {
     this.respuesta = 'Incorrecto';
     this.modalController.dismiss(this.respuesta);
     return 'respuesta';

@@ -33,6 +33,7 @@ export class HomePage implements OnInit {
   }
 
   addRegister(){
+    GlobalConstants.registros = JSON.parse(localStorage.getItem('registros'));
     GlobalConstants.registros.push(
       {
         fecha: GlobalConstants.rfecha,
@@ -45,27 +46,28 @@ export class HomePage implements OnInit {
         compTranspor:GlobalConstants.compania,
         nCamion:GlobalConstants.nCamion,
         nCaja:GlobalConstants.nCaja,
-        camarote:GlobalConstants.resp1,
-        motor:GlobalConstants.resp2,
-        defensa:GlobalConstants.resp3,
-        llantasCamion:GlobalConstants.resp4,
-        tanque:GlobalConstants.resp5,
-        qRueda:GlobalConstants.resp6,
-        llantasRemolque:GlobalConstants.resp7,
-        bolsaAire:GlobalConstants.resp8,
-        chasisChofer:GlobalConstants.resp9,
-        puertaRemolque:GlobalConstants.resp10,
-        bisagra:GlobalConstants.resp11,
-        chasisCopiloto:GlobalConstants.resp12,
+        camarote:GlobalConstants.resp1.data,
+        motor:GlobalConstants.resp2.data,
+        defensa:GlobalConstants.resp3.data,
+        llantasCamion:GlobalConstants.resp4.data,
+        tanque:GlobalConstants.resp5.data,
+        qRueda:GlobalConstants.resp6.data,
+        llantasRemolque:GlobalConstants.resp7.data,
+        bolsaAire:GlobalConstants.resp8.data,
+        chasisChofer:GlobalConstants.resp9.data,
+        puertaRemolque:GlobalConstants.resp10.data,
+        bisagra:GlobalConstants.resp11.data,
+        chasisCopiloto:GlobalConstants.resp12.data,
         nomEmbarque:GlobalConstants.nomEmbarque,
-        paredDerecho:GlobalConstants.resp13,
-        fondo:GlobalConstants.resp14,
-        paredIzquierdo:GlobalConstants.resp15,
-        techoRemolque:GlobalConstants.resp16,
-        pisoRemolque:GlobalConstants.resp17,
+        paredDerecho:GlobalConstants.resp13.data,
+        fondo:GlobalConstants.resp14.data,
+        paredIzquierdo:GlobalConstants.resp15.data,
+        techoRemolque:GlobalConstants.resp16.data,
+        pisoRemolque:GlobalConstants.resp17.data,
         medida:GlobalConstants.resp18
       }
     );
+    /* console.log(GlobalConstants.resp1); */
     GlobalConstants.rfecha= '';
     GlobalConstants.hora= '';
     GlobalConstants.arribo= '';
@@ -99,7 +101,9 @@ export class HomePage implements OnInit {
     GlobalConstants.statusIn=false;
     GlobalConstants.statusOut=false;
     GlobalConstants.statusG=true;
-    GlobalConstants.nArribo += 1;
+    /* GlobalConstants.nArribo += 1; */
+    localStorage.setItem('nArribo', (parseInt(localStorage.getItem('nArribo')) + 1) + "");
+    localStorage.setItem('registros',JSON.stringify(GlobalConstants.registros));
   }
 
 

@@ -53,11 +53,11 @@ export class SignPage implements OnInit, AfterViewInit {
 
   save(): void {
     const img = this.signaturePad.toDataURL();
-    localStorage.setItem(GlobalConstants.nArribo + "-f"+this.titulo, img);
+    localStorage.setItem(localStorage.getItem('nArribo') + "-f"+this.titulo, img);
     if (this.titulo == "Guardia") {
-      GlobalConstants.fGuardia = GlobalConstants.nArribo + "-f"+this.titulo;
+      GlobalConstants.fGuardia = localStorage.getItem('nArribo') + "-f"+this.titulo;
     } else {
-      GlobalConstants.fOperador = GlobalConstants.nArribo + "-f"+this.titulo;
+      GlobalConstants.fOperador = localStorage.getItem('nArribo') + "-f"+this.titulo;
     }
     this.modalController.dismiss();
     /* var dataImage = localStorage.getItem('10001-fOperador');

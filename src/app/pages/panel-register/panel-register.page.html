@@ -18,14 +18,15 @@
         </ion-col>
     </ion-row>
     <ion-list>
-        <ion-item *ngFor="let registro of registros" >
+        <!-- .slice().reverse() -->
+        <ion-item *ngFor="let registro of registros; let indice = index;" >
             <ion-label>{{registro.noArribo}}</ion-label>
             <ion-label>{{registro.compTranspor}}</ion-label>
             <ion-label>{{registro.fecha}}</ion-label>
            <!--  <ion-button size="small" color="secondary">
                 <ion-icon name="create"></ion-icon>
             </ion-button> -->
-            <ion-button size="small" color="danger">
+            <ion-button size="small" color="danger" (click)="eliminar(indice)">
                 <ion-icon name="trash"></ion-icon>
             </ion-button>
             <ion-button size="small" color="tertiary" (click)="generatePDF(registro)">
@@ -46,15 +47,16 @@
               <th>GPS Secure Registros de embarques</th>
             </tr>
             <tr>
-              <th>Fecha:</th>
-              <th>{{vFecha | date: 'dd/MM/yy'}}</th>
-              <th>Hora:</th>
-              <th>{{ vFecha | date: 'h:mm:ss a' }}</th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
             </tr>
             <tr>
               <th></th>
             </tr>
             <tr>
+              <th>Número de arribo</th>
               <th>Fecha Registro</th>
               <th>Nombre guardia</th>
               <th>Nombre operador</th>
@@ -82,6 +84,7 @@
               <th>18.-Medida</th>
           </tr>
           <tr *ngFor="let registro of registros">
+              <th>{{registro.noArribo}}</th>
               <th>{{registro.fecha}}</th>
               <th>{{registro.nGuardia}}</th>
               <th>{{registro.nOperador}}</th>

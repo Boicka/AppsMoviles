@@ -28,7 +28,7 @@
             <ion-col size="6">
                 <ion-item>
                     <ion-label position="floating">Nombre Guardia</ion-label>
-                    <ion-input (keypress)="onChangeNG($event)" type="text" [(ngModel)]="nGuardia"></ion-input>
+                    <ion-input (ionChange)="onChangeNG($event)" type="text" [(ngModel)]="nGuardia"></ion-input>
                 </ion-item>
             </ion-col>
             <ion-col size="6">
@@ -40,7 +40,7 @@
             <ion-col size="6">
                 <ion-item>
                     <ion-label position="floating">Nombre Operador</ion-label>
-                    <ion-input (keypress)="onChangeNO($event)" type="text" [(ngModel)]="nOperador"></ion-input>
+                    <ion-input (ionChange)="onChangeNO($event)" type="text" [(ngModel)]="nOperador"></ion-input>
                 </ion-item>
             </ion-col>
             <ion-col size="6">
@@ -65,13 +65,13 @@
             <ion-col size="6">
                 <ion-item>
                     <ion-label position="floating">Número de Camión</ion-label>
-                    <ion-input (keypress)="onChangeNCam($event)" type="text" [(ngModel)]="nCamion"></ion-input>
+                    <ion-input (ionChange)="onChangeNCam($event)" type="text" [(ngModel)]="nCamion"></ion-input>
                 </ion-item>
             </ion-col>
             <ion-col size="6">
                 <ion-item>
                     <ion-label position="floating">Número de Caja</ion-label>
-                    <ion-input (keypress)="onChangeMCaj($event)" type="number" [(ngModel)]="nCaja"></ion-input>
+                    <ion-input (ionChange)="onChangeMCaj($event)" type="number" [(ngModel)]="nCaja"></ion-input>
                 </ion-item>
             </ion-col>
         </ion-row>

@@ -39,7 +39,7 @@ export class TruckRegisterPage implements OnInit {
     
     GlobalConstants.rfecha = this.pipe.transform(this.fecha, 'dd/MM/yyyy');
     GlobalConstants.hora = this.pipe.transform(this.fecha, 'h:mm:ss a');
-    GlobalConstants.arribo = GlobalConstants.nArribo;
+    GlobalConstants.arribo = localStorage.getItem('nArribo');
     this.arribo = GlobalConstants.arribo;
     this.nGuardia = GlobalConstants.nGuardia;
     this.nOperador = GlobalConstants.nOperador;
@@ -50,6 +50,7 @@ export class TruckRegisterPage implements OnInit {
     }
     this.nCamion = GlobalConstants.nCamion;
     this.nCaja = GlobalConstants.nCaja;
+    this.validar();
   }
 
   async openModalSign(titleModal){
